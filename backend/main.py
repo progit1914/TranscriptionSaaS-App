@@ -27,10 +27,20 @@ from slowapi import Limiter
 from slowapi.util import get_remote_address
 from slowapi.middleware import SlowAPIMiddleware
 from slowapi.errors import RateLimitExceeded
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="TranscriptionSaaS API")
 
 # ======== RATE LIMITING SETUP ========
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://transcriptionapp-4xnd1wu14-ayoubs-projects-dc..."],  # Your Vercel URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 limiter = Limiter(key_func=get_remote_address)
 app.state.limiter = limiter
