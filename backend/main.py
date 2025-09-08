@@ -33,10 +33,17 @@ app = FastAPI(title="TranscriptionSaaS API")
 
 # ======== RATE LIMITING SETUP ========
 
-# Add CORS middleware
+# Replace with your actual Vercel URLs and localhost for development
+allowed_origins = [
+    "https://your-app.vercel.app",
+    "https://transcriptionapp-4xnd1wu14-ayoubs-projects-dc...",  # Keep your existing one
+    "http://localhost:3000",  # For local development
+    "http://localhost:5173",  # For Vite dev server
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://transcriptionapp-4xnd1wu14-ayoubs-projects-dc..."],  # Your Vercel URL
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
