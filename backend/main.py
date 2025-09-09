@@ -35,15 +35,15 @@ app = FastAPI(title="TranscriptionSaaS API")
 
 # Replace with your actual Vercel URLs and localhost for development
 allowed_origins = [
-    "https://your-app.vercel.app",
-    "https://transcriptionapp-4xnd1wu14-ayoubs-projects-dc...",  # Keep your existing one
-    "http://localhost:3000",  # For local development
-    "http://localhost:5173",  # For Vite dev server
+    "https://transcriptionapp.vercel.app",  # ← ADD THIS
+    "https://transcriptionapp-4xnd1wu14-ayoubs-projects-dc...",  # Keep for now
+    "http://localhost:3000",
+    "http://localhost:5173",
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=allowed_origins,
+    allow_origins=["*"],  # ← Allows ALL origins temporarily
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
