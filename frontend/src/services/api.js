@@ -21,7 +21,7 @@ export const uploadAudio = async (file, apiKey) => {
   const formData = new FormData();
   formData.append('file', file);
   
-const response = await axios.post(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/api/upload`, formData, {
+  const response = await api.post('/api/upload', formData, {
     headers: {
       'Authorization': `Bearer ${apiKey}`,
       'Content-Type': 'multipart/form-data'
