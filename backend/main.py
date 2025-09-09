@@ -17,6 +17,7 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 import uuid
 import os
+
 import json 
 import sqlite3
 from datetime import datetime
@@ -372,5 +373,6 @@ async def health_check():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)#   F o r c e   r e d e p l o y  
- 
+    uvicorn.run(app, host="0.0.0.0", port=8000)#   F o r c e   r e d e p l o y 
+ 
+ 
