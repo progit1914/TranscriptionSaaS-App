@@ -1,4 +1,11 @@
 {
+  "name": "transcription-saas-app",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "dev": "cd frontend && npm start",
+    "start": "cd frontend && npm start"
+  },
   "dependencies": {
     "axios": "^1.11.0"
   }
