@@ -1,15 +1,17 @@
+@"
 {
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
+      "src": "vercel-build.sh",
       "use": "@vercel/static-build"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)", 
-      "dest": "/frontend/build/index.html"
+      "src": "/(.*)",
+      "dest": "/public/index.html"
     }
   ]
 }
+"@ | Out-File -FilePath "vercel.json" -Encoding UTF8
